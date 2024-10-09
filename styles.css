@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
+
+:root {
+  /* colors */
+  --clr-dark-cyan: hsl(158, 36%, 37%);
+  --clr-darker-cyan: hsl(158, 36%, 27%);
+  --clr-cream: hsl(30, 38%, 92%);
+  --clr-very-dark-blue: hsl(212, 21%, 14%);
+  --clr-dark-grayish-blue: hsl(228, 12%, 48%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  /* fonts */
+  --ff-body: "Montserrat", sans-serif;
+  --ff-heading: "Fraunces", serif;
+
+  /* font-weights */
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+/* RESET */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  color: var(--clr-dark-grayish-blue);
+  background-color: var(--clr-cream);
+  font-family: var(--ff-body);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-family: var(--ff-heading);
+  color: var(--clr-very-dark-blue);
+  line-height: 1.1;
+}
+p {
+  line-height: 1.5;
+  font-size: 0.875rem;
+  font-weight: var(--fw-regular);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0.875rem;
+}
+
+.card {
+  display: grid;
+  background-color: var(--clr-white);
+  max-width: 40rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+@media (min-width: 600px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card > * {
+    flex: 1;
+  }
+
+  .card__content {
+    --gap: 3.875rem;
+  }
+
+  .card button {
+    height: max-content;
+  }
+}
+
+.card__content {
+  --gap: 0.875rem;
+  display: grid;
+  padding: 2rem;
+  gap: var(--gap);
+}
+
+.card__category {
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.card__prices {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card__prices > p {
+  color: var(--clr-dark-cyan);
+  font-family: var(--ff-heading);
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+}
+
+.card button {
+  font-family: var(--ff-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--clr-dark-cyan);
+  color: var(--clr-white);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: var(--clr-darker-cyan);
+}
